@@ -9,3 +9,26 @@ int main()
     cout << "Sorted array is \n";
     printArray(arr, N);
 }
+
+void step(int arr[], int N, int i)
+{
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+    
+    if (l < N && arr[l] > arr[largest])
+    {
+        largest = l;
+    }
+    
+    if (r < N && arr[r] > arr[largest])
+    {
+        largest = r;
+    }
+    
+    if (largest != i)
+    {
+        swap(arr[i], arr[largest]);
+        step(arr, N, largest);
+    }
+}
