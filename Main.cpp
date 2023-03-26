@@ -32,3 +32,23 @@ void step(int arr[], int N, int i)
         step(arr, N, largest);
     }
 }
+
+void Sort(int arr[], int N)
+{
+    for (int i = N / 2 - 1; i >= 0; i--)
+        step(arr, N, i);
+ 
+    for (int i = N - 1; i > 0; i--) {
+        swap(arr[0], arr[i]);
+        step(arr, i, 0);
+    }
+}
+
+int main()
+{
+    int arr[] = { 2, 10, 4, 3, 9, 7 };
+    int N = sizeof(arr) / sizeof(arr[0]);
+    heapSort(arr, N);
+    cout << "Sorted array is \n";
+    printArray(arr, N);
+}
