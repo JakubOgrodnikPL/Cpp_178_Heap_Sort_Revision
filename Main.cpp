@@ -44,6 +44,13 @@ void Sort(int arr[], int N)
     }
 }
 
+void print(int arr[], int N)
+{
+    for (int i = 0; i < N; ++i)
+        cout << arr[i] << " ";
+    cout << "\n";
+}
+
 int main()
 {
     int arr[] = { 2, 10, 4, 3, 9, 7 };
